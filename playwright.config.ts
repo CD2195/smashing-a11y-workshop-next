@@ -14,7 +14,11 @@ export default defineConfig({
 
   // Chromium only: axe evaluates the DOM/CSSOM, so its findings do not vary by
   // engine. Firefox/WebKit would also need OS deps this machine lacks.
-  projects: [{ name: 'chromium', use: { ...devices['Desktop Chrome'] } }],
+  projects: [
+    { name: 'chromium', use: { ...devices['Desktop Chrome'] }}, 
+    {name: "firefox", use: {...devices["Desktop Firefox"]}}, 
+    // {name: "safari", use: {...devices["Desktop Safari"]}}
+  ],
 
   // Scan production output, not the dev server.
   webServer: {
